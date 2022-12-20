@@ -13,4 +13,4 @@ dependencyResolutionManagement {
     }
 }
 rootProject.name = "GUI-Android"
-include ':app'
+include(":app")
