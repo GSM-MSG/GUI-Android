@@ -1,6 +1,7 @@
 plugins {
     id (BuildPlugins.ANDROID_APPLICATION_PLUGIN)
     id (BuildPlugins.KOTLIN_ANDROID_PLUGIN)
+    id (BuildPlugins.KOTLIN_KAPT)
 }
 
 android {
@@ -48,16 +49,29 @@ android {
 
 dependencies {
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation ("androidx.lifecycle:lifecycle-runtime-ktx:2.3.1")
-    implementation ("androidx.activity:activity-compose:1.3.1")
-    implementation ("androidx.compose.ui:ui:${Versions.COMPOSE}")
-    implementation ("androidx.compose.ui:ui-tooling-preview:${Versions.COMPOSE}")
-    implementation ("androidx.compose.material:material:1.1.1")
-    testImplementation ("junit:junit:4.13.2")
-    androidTestImplementation ("androidx.test.ext:junit:1.1.4")
-    androidTestImplementation ("androidx.test.espresso:espresso-core:3.5.0")
-    androidTestImplementation ("androidx.compose.ui:ui-test-junit4:${Versions.COMPOSE}")
-    debugImplementation ("androidx.compose.ui:ui-tooling:${Versions.COMPOSE}")
-    debugImplementation ("androidx.compose.ui:ui-test-manifest:${Versions.COMPOSE}")
+    implementation(Dependency.Core.CORE)
+    implementation (Dependency.LifeCycle.LIFECYCLE_RUNTIME)
+    implementation (Dependency.Compose.COMPOSE_ACTIVITY)
+    implementation (Dependency.Compose.COMPOSE_UI)
+    implementation (Dependency.Compose.COMPOSE_PREVIEW)
+    implementation (Dependency.Compose.COMPOSE_MATERIAL)
+    androidTestImplementation (Dependency.AndroidTest.ESPRESSO_CORE)
+    androidTestImplementation (Dependency.Compose.COMPOSE_JUNIT)
+    debugImplementation (Dependency.Compose.COMPOSE_TOOLING)
+    debugImplementation (Dependency.Compose.COMPOSE_MANIFEST)
+
+    implementation(Dependency.Moshi.MOSHI)
+    kapt(Dependency.Moshi.MOSHI_COMPILER)
+
+    testImplementation(Dependency.UnitTest.JUNIT)
+    testImplementation(Dependency.UnitTest.MOCKITO)
+    testImplementation(Dependency.UnitTest.MOCKITO_KOTLIN)
+    testImplementation(Dependency.UnitTest.MOCKITO_INLINE)
+
+    implementation(Dependency.Retrofit.RETROFIT)
+    implementation(Dependency.Retrofit.RETROFIT_CONVERTER_GSON)
+
+    implementation(Dependency.OkHttp.OKHTTP)
+    implementation(Dependency.OkHttp.OKHTTP_LOGGING_INTERCEPTOR)
+
 }
