@@ -1,18 +1,18 @@
 plugins {
-    id ("com.android.application")
-    id ("org.jetbrains.kotlin.android")
+    id (BuildPlugins.ANDROID_APPLICATION_PLUGIN)
+    id (BuildPlugins.KOTLIN_ANDROID_PLUGIN)
 }
 
 android {
-    namespace = "com.msg.gui"
-    compileSdk = 32
+    namespace = ProjectProperties.APPLICATION_ID
+    compileSdk = ProjectProperties.TARGET_SDK
 
     defaultConfig {
-        applicationId = "com.msg.gui"
-        minSdk = 24
-        targetSdk = 32
-        versionCode = 1
-        versionName = "1.0"
+        applicationId = ProjectProperties.APPLICATION_ID
+        minSdk = ProjectProperties.MIN_SDK
+        targetSdk = ProjectProperties.TARGET_SDK
+        versionCode = ProjectProperties.VERSION_CODE
+        versionName = ProjectProperties.VERSION_NAME
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
@@ -27,8 +27,8 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
+        sourceCompatibility = ProjectProperties.JAVA_VERSION
+        targetCompatibility = ProjectProperties.JAVA_VERSION
     }
     kotlinOptions {
         jvmTarget = "1.8"
