@@ -1,15 +1,15 @@
 plugins {
-    id("com.android.library")
-    id("org.jetbrains.kotlin.android")
+    id(BuildPlugins.ANDROID_LIBRARY_PLUGIN)
+    id(BuildPlugins.KOTLIN_ANDROID_PLUGIN)
 }
 
 android {
     namespace = "com.msg.presentation"
-    compileSdk = 32
+    compileSdk = ProjectProperties.TARGET_SDK
 
     defaultConfig {
-        minSdk = 32
-        targetSdk = 32
+        minSdk = ProjectProperties.MIN_SDK
+        targetSdk = ProjectProperties.TARGET_SDK
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
@@ -29,7 +29,7 @@ android {
         targetCompatibility = JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = "1.8"
+        jvmTarget = ProjectProperties.JVM_TARGET
     }
 }
 
@@ -37,10 +37,10 @@ dependencies {
     implementation(project(":domain"))
     implementation(project(":data"))
 
-    implementation("androidx.core:core-ktx:1.7.0")
-    implementation("androidx.appcompat:appcompat:1.5.1")
-    implementation("com.google.android.material:material:1.7.0")
-    testImplementation("junit:junit:4.13.2")
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
+    implementation(Dependency.Core.CORE)
+    implementation(Dependency.AppCompat.APPCOMPAT)
+    implementation(Dependency.Google.MATERIAL)
+    testImplementation(Dependency.UnitTest.JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ANDROID_JUNIT)
+    androidTestImplementation(Dependency.AndroidTest.ESPRESSO_CORE)
 }

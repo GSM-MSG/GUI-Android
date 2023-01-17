@@ -13,6 +13,10 @@ object Dependency {
         const val CORE = "androidx.core:core-ktx:${Versions.CORE_VERSION}"
     }
 
+    object AppCompat {
+        const val APPCOMPAT = "androidx.appcompat:appcompat:${Versions.APPCOMPAT}"
+    }
+
     object LifeCycle {
         const val LIFECYCLE_RUNTIME = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.LIFECYCLE_RUNTIME}"
     }
@@ -48,5 +52,9 @@ object Dependency {
         const val OKHTTP = "com.squareup.okhttp3:okhttp:${Versions.OKHTTP}"
         const val OKHTTP_LOGGING_INTERCEPTOR =
             "com.squareup.okhttp3:logging-interceptor:${Versions.OKHTTP}"
+    }
+
+    object Google {
+        const val MATERIAL = "com.google.android.material:material:${Versions.MATERIAL}"
     }
 }

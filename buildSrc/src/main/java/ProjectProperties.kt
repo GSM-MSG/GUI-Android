@@ -7,6 +7,8 @@ object ProjectProperties {
 
     const val APPLICATION_ID = "com.msg.gui"
 
+    const val JVM_TARGET= "1.8"
+
     const val TARGET_SDK = 32
     const val MIN_SDK = 24
 
