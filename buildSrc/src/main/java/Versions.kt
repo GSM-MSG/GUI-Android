@@ -19,4 +19,7 @@ object Versions {
 
     const val RETROFIT = "2.7.1"
     const val OKHTTP = "4.9.0"
+
+    const val APPCOMPAT = "1.5.1"
+    const val MATERIAL = "1.7.0"
 }
